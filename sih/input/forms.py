@@ -1,7 +1,6 @@
 from django import forms
 
-from .models import Input
+from input.models import InputImage
 
-class DocumentForm(forms.ModelForm):
-    class Meta:
-        model = Input
+class InputImageForm(forms.Form):
+    image = forms.FileField(label='Select a nii Image')

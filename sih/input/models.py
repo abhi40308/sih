@@ -2,5 +2,5 @@ from django.db import models
 
 # Create your models here.
 
-class Input(models.Model):
-	document = models.FileField(upload_to='documents/')
+class InputImage(models.Model):
+	image = models.FileField(upload_to='input/')

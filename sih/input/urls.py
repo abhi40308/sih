@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+from .views import InputImageView, InputDetailView
 
 urlpatterns = [
-    path('', views.model_form_upload, name='input_form'),
+    path('', InputImageView.as_view(), name='input_form'),
+    path(r'^/(?P<pk>\d+)/$', InputDetailView.as_view(), name='input_image'),
 ]
