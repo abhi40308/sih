@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
+<h4>MRI is a very popular technique to detect tumours. MRI creates cross-section pictures of your insides. But MRI uses strong magnets to make the images – not radiation. An MRI scan takes cross-sectional slices (views) from many angles, as if someone were looking at a slice of your body from the front, from the side, or from above your head. MRI creates pictures of soft tissue parts of the body that are sometimes hard to see using other imaging tests.MRI is very good at finding and pinpointing some cancers. An MRI with contrast dye is the best way to see brain and spinal cord tumors</h4>
 
-<h1>Brain image segmentation</h1>
+<img src="{% static 'brain1.png' %}" alt="brain pictures">
+
 
 {% endblock %}
