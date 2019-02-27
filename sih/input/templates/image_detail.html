@@ -2,4 +2,10 @@
 
 {% block content %}
 
+<h1> Your input image is : </h1>
+
+{{ object.id }}
+
+<a href="{% url 'output_image' pk=object.id %}">See Output</a>
+
 {% endblock %}

@@ -24,3 +24,8 @@ class InputDetailView(DetailView):
     model = InputImage
     template_name = 'image_detail.html'
     context_object_name = 'image'
+
+class OutputView(DetailView):
+    model = InputImage
+    template_name = 'image_output.html'
+    context_object_name = 'image'
