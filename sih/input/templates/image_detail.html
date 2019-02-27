@@ -1,10 +1,20 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/papaya.css' %}" />
+<script type="text/javascript" src="{% static 'js/papaya.js' %}"></script>
 
 <h1> Your input image is : </h1>
 
 {{ object.id }}
+<!-- <script type="text/javascript">
+            var params = [];
+            params["images"] = ["./BRATS_001.nii"];
+</script>
+ -->
+<div class="papaya" data-params="params"></div>
 
 <a href="{% url 'output_image' pk=object.id %}">See Output</a>
 

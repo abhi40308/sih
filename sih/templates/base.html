@@ -1,8 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	<title>Brainy</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+        <!-- iOS meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!--      -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
      <link rel="stylesheet" href="{% static 'css/input.css' %}">
     <script src="{% static 'js/main.js' %}"></script>
@@ -28,8 +37,8 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{% url 'home_page' %}#container">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
                 <li ><a href="{% url 'input_form' %}#container">Upload<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cloud-upload"></span></a></li>
-                <li ><a href="#">Analysis<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-flash"></span></a></li>
-                <li ><a href="#">Settings<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a></li>
+                <!-- <li ><a href="#">Analysis<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-flash"></span></a></li> -->
+                <!-- <li ><a href="#">Settings<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a></li> -->
                
                 <li><a href="#">Logout<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span></a></li>
               
