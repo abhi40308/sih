@@ -1,11 +1,17 @@
     body,html{
-    height: 100%;
+    height: 100vh;
+
   }
 
   /* remove outer padding */
   .main .row{
     padding: 0px;
     margin: 0px;
+  }
+  .sidebar1
+  {
+    height: 100%;
+
   }
 
   /*Remove rounded coners*/
@@ -95,7 +101,7 @@
     /*gives sidebar width/height*/
     nav.sidebar{
       width: 200px;
-      height: 100%;
+      height :100%;
       margin-left: -160px;
       float: left;
       z-index: 8000;
