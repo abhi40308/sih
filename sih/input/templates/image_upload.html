@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="{% url "input_form" %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="submit" />
+<div class="col-25">
+<div  class="container1" >
+<form  class="inputform" action="{% url "input_form" %}" method="post" enctype="multipart/form-data">
+	<div style=" color:blue;">
+    
+    {{ form.as_p }} 
+    </div>
+
+    <input class="input1" type="submit" value="Upload" /> 
+
 </form>
+</div>
+</div>
 {% endblock %}
