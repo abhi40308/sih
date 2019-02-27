@@ -4,6 +4,7 @@
 <div class="col-25">
 <div  class="container1" >
 <form  class="inputform" action="{% url "input_form" %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
 	<div style=" color:blue;">
     
     {{ form.as_p }} 
