@@ -1,5 +1,5 @@
     body,html{
-    height: 100vh;
+    height: 100%;
     overflow:auto;
 
 
@@ -21,6 +21,8 @@
 
   nav.sidebar.navbar {
     border-radius: 0px;
+    min-height:100%;
+
   }
 
   nav.sidebar, .main{
@@ -32,7 +34,7 @@
 
   /* Add gap to nav and right windows.*/
   .main{
-    padding: 10px 10px 0 10px;
+    padding: 0px 0px 0 0px;
   }
 
   /* .....NavBar: Icon only with coloring/layout.....*/
@@ -132,8 +134,9 @@
 
     /*Allow main to be next to Nav*/
     .main{
-      width: calc(100% - 200px); /*keeps 100% minus nav size*/
+        width: calc(100% - 200px); /*keeps 100% minus nav size*/
       margin-left: 200px;
+   
     }
 
     /*Show all nav*/
@@ -145,6 +148,7 @@
     nav.sidebar .forAnimate{
       opacity: 1;
     }
+
   }
 
   nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
