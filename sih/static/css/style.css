@@ -1,7 +1,10 @@
     body,html{
     height: 100vh;
+    overflow:auto;
+
 
   }
+
 
   /* remove outer padding */
   .main .row{
