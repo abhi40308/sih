@@ -9,6 +9,8 @@ from .forms import InputImageForm
 from .prediction import prediction
 import gzip
 import shutil
+import zipfile
+
 
 class InputImageView(FormView):
     template_name = 'image_upload.html'
@@ -18,23 +20,43 @@ class InputImageView(FormView):
         input_image = InputImage(
             image=self.get_form_kwargs().get('files')['image'])
         input_image.save()
+        
+        s = input_image.image.path
+        arrlist = s.split('/')
 
-        image_path = input_image.image.path
+        s = ''
 
+        folder_name = arrlist[-1]
+        for i in range(len(arrlist)-1):
+            s+= arrlist[i]
+            s+= '/'
+
+        print("s is  : ", s)
+
+        print("folder name is : ", folder_name)
         self.id = input_image.id
 
-        s = input_image.image.path
-        s = s[0:-3]
+        if(input_image.extension() == ".zip" ):
+            with zipfile.ZipFile(input_image.image.path, 'r') as zip:
+                zip.printdir() 
+                zip.extractall(s)
 
-        print(s);
+        input_image_path = 'input/' + folder_name[:-4]+'/'+ 'pre/FLAIR.nii.gz'
+
+        input_image = InputImage(image = input_image_path)
+        input_image.save()
+        s =  input_image.image.path[:-3]
+
         if(input_image.extension() == ".gz"):
             with gzip.open(input_image.image.path,'rb') as f_in:
                 with open(s,'wb') as f_out:
                     shutil.copyfileobj(f_in,f_out)
 
-        s = s[58:]
+        arrlist = s.split('/')
+        path_final = arrlist[-3] + '/' + arrlist[-2] + '/' + arrlist[-1]
+        print("path final is : ",path_final)
 
-        input_image = InputImage( image = s)
+        input_image = InputImage( image = path_final)
         input_image.save()
         self.id = input_image.id
 
@@ -48,8 +70,10 @@ class InputDetailView(DetailView):
     template_name = 'image_detail.html'
     context_object_name = 'image'
 
+    # output_image = 
+
 class OutputView(DetailView):
     model = InputImage
     template_name = 'image_output.html'
-    prediction('/Users/abhijeetsinghkhangarot/Desktop/prediction/148')
+    # prediction('/Users/abhijeetsinghkhangarot/Desktop/prediction/148')
     context_object_name = 'image'

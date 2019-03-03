@@ -10,13 +10,13 @@
 
 <script type="text/javascript">
             var params = [];
-            params["images"] = ["/media/{{ object.image.name }}"];
+            params["images"] = ["/media/input/{{ object.image.name }}"];
 </script>
 
 <div class="papaya" data-params="params"></div>
 
 <br><br>
 
-<a href="{% url 'output_image' pk=object.id %}">See Output</a>
+<a href="{% url 'output_image' pk=object.id %}">Analyse</a>
 
 {% endblock %}
