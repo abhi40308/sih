@@ -54,7 +54,7 @@ class InputImageView(FormView):
 
         arrlist = s.split('/')
         path_final = arrlist[-3] + '/' + arrlist[-2] + '/' + arrlist[-1]
-        print("path final is : ",path_final)
+        # print("path final is : ",path_final)
 
         input_image = InputImage( image = path_final)
         input_image.save()
@@ -70,10 +70,7 @@ class InputDetailView(DetailView):
     template_name = 'image_detail.html'
     context_object_name = 'image'
 
-    # output_image = 
-
 class OutputView(DetailView):
     model = InputImage
     template_name = 'image_output.html'
-    # prediction('/Users/abhijeetsinghkhangarot/Desktop/prediction/148')
     context_object_name = 'image'
