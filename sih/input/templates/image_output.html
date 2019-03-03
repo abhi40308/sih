@@ -4,7 +4,17 @@
 
 <h1> Your outupt image is : </h1>
 
-{{ object.id }}
+<script type="text/javascript">
+            var params = [];
+            params["images"] = ["/media/{{ object.image.name }}"];
+</script>
 
+<script type="text/javascript">
+            var params = [];
+            params["images"] = ["/media/{{ object.image.name }}"];
+</script>
+
+
+{{ object.id }}
 
 {% endblock %}

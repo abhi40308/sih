@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.views.generic import FormView, DetailView
 from .models import InputImage
 from .forms import InputImageForm
+from .prediction import prediction
 import gzip
 import shutil
 
@@ -17,11 +18,15 @@ class InputImageView(FormView):
         input_image = InputImage(
             image=self.get_form_kwargs().get('files')['image'])
         input_image.save()
+
+        image_path = input_image.image.path
+
         self.id = input_image.id
 
         s = input_image.image.path
         s = s[0:-3]
 
+        print(s);
         if(input_image.extension() == ".gz"):
             with gzip.open(input_image.image.path,'rb') as f_in:
                 with open(s,'wb') as f_out:
@@ -46,4 +51,5 @@ class InputDetailView(DetailView):
 class OutputView(DetailView):
     model = InputImage
     template_name = 'image_output.html'
+    prediction('/Users/abhijeetsinghkhangarot/Desktop/prediction/148')
     context_object_name = 'image'
