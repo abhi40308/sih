@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.views.generic import FormView, DetailView
 from .models import InputImage
 from .forms import InputImageForm
-from .prediction import prediction
+# from .prediction import prediction
 import gzip
 import shutil
 import zipfile
